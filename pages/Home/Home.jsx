@@ -1,6 +1,6 @@
 import { RecCard } from "../../components/RecCard/RecCard";
 import { s } from "./Home.style";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 
 export function Home({}) {
   return (
@@ -13,10 +13,12 @@ export function Home({}) {
           <Text style={s.activitiesTxt}>Activities</Text>
         </TouchableOpacity>
       </View>
-      <View style={s.recContainer}>
-        <Text style={s.recHeader}>Recommended</Text>
+      <Text style={s.recHeader}>Recommended</Text>
+      <ScrollView style={s.recContainer}>
         <RecCard />
-      </View>
+        <RecCard />
+        <RecCard />
+      </ScrollView>
     </View>
   );
 }

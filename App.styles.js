@@ -2,17 +2,17 @@ import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
   app: {
-    flex: 1,
-    backgroundColor: "#F9F9F9",
-    padding: 15,
+    backgroundColor: "#ece4d6",
   },
+  container: {
+    flex: 1,
+  },
+
   header: {
-    flex: 1,
+    height: 120,
   },
-  body: {
-    flex: 5,
-  },
+  body: { flex: 1 },
   footer: {
-    height: 70,
+    height: 100,
   },
 });

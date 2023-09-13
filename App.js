@@ -1,19 +1,22 @@
 import { Text, View } from "react-native";
 import { s } from "./App.styles";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
+import { Home } from "./pages/Home/Home";
 
 export default function App() {
   return (
     <SafeAreaProvider style={s.app}>
-      <SafeAreaView>
+      <SafeAreaView style={s.container}>
         <View style={s.header}>
-          <Text>Header</Text>
+          <Header />
         </View>
         <View style={s.body}>
-          <Text>Body</Text>
+          <Home />
         </View>
         <View style={s.footer}>
-          <Text>Footer</Text>
+          <Footer />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

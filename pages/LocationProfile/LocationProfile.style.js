@@ -21,7 +21,6 @@ export const s = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 20,
     paddingHorizontal: 5,
-    flex: 1,
   },
   hoursHeader: {
     fontSize: 20,
@@ -47,13 +46,21 @@ export const s = StyleSheet.create({
     color: "#28143e",
     fontSize: 12,
   },
+  descriptionContainer: { paddingHorizontal: 10, paddingBottom: 2 },
+  descriptionHeadline: { fontSize: 20, fontWeight: "bold", marginBottom: 5 },
+  descriptionText: {},
   activitiesDropDown: {
     flexDirection: "row",
-    flex: 1,
     justifyContent: "space-between",
+    backgroundColor: "#28143E",
+    paddingLeft: 20,
+    paddingVertical: 10,
+    alignItems: "center",
+    paddingRight: 5,
   },
   activitiesHeader: {
     fontSize: 30,
     textAlign: "left",
+    color: "white",
   },
 });

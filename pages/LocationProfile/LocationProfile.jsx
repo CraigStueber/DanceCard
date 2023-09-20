@@ -1,10 +1,10 @@
 import { s } from "./LocationProfile.style";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import OEJ from "../../assets/OEJ.png";
 import { Ionicons } from "@expo/vector-icons";
 export function LocationProfile({}) {
   return (
-    <View style={s.container}>
+    <ScrollView style={s.container}>
       <View style={s.profileContainer}>
         <Image source={OEJ} style={s.locationLogoImg} />
         <View style={s.locationTextContainer}>
@@ -49,14 +49,34 @@ export function LocationProfile({}) {
           </View>
         </View>
       </View>
-      <View style={s.activitiesDropDown}>
+      <View style={s.descriptionContainer}>
+        <Text style={s.descriptionHeadline}>Description</Text>
+        <Text style={s.descriptionText}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+      </View>
+      <TouchableOpacity style={s.activitiesDropDown}>
         <Text style={s.activitiesHeader}>Location Activities</Text>
         <Ionicons
           name="ios-arrow-down-circle-outline"
           size={50}
           color="white"
         />
-      </View>
-    </View>
+      </TouchableOpacity>
+      <TouchableOpacity style={s.activitiesDropDown}>
+        <Text style={s.activitiesHeader}>Upcoming Events</Text>
+        <Ionicons
+          name="ios-arrow-down-circle-outline"
+          size={50}
+          color="white"
+        />
+      </TouchableOpacity>
+    </ScrollView>
   );
 }

@@ -9,7 +9,7 @@ export const s = StyleSheet.create({
   },
 
   header: {
-    height: 120,
+    height: 60,
   },
   body: { flex: 1 },
   footer: {

@@ -6,7 +6,7 @@ export function Header({}) {
   return (
     <View style={s.container}>
       <TouchableOpacity style={s.logoContainer}>
-        <Image style={s.logo} source={danceCard}></Image>
+        <Text style={s.nameLogo}>Dance Card</Text>
       </TouchableOpacity>
       <TouchableOpacity style={s.profileImgContainer}>
         <Image

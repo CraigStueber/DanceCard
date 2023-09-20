@@ -20,7 +20,7 @@ export const s = StyleSheet.create({
     borderRadius: 10,
   },
   activitiesTxt: { textAlign: "center", color: "white", fontSize: 25 },
-  recContainer: { flex: 1.3 },
+  recContainer: { flex: 1.3, backgroundColor: "white", paddingHorizontal: 20 },
   recHeader: {
     paddingLeft: 20,
     height: 50,

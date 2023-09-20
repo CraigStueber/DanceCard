@@ -6,8 +6,12 @@ export const s = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 30,
     paddingVertical: 20,
+    borderWidth: 2,
+    borderColor: "black",
+    borderRadius: 10,
+    marginVertical: 5,
   },
-  activityImage: { height: 100, width: 100, borderRadius: 20 },
+  activityImage: { height: 80, width: 80, borderRadius: 20 },
   textContainer: { paddingLeft: 20 },
   eventTitle: {
     fontSize: 20,

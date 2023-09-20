@@ -10,14 +10,14 @@ export const s = StyleSheet.create({
     paddingVertical: 10,
     alignItems: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  nameLogo: {
+    fontSize: 25,
     justifyContent: "flex-start",
+    color: "white",
   },
   profileImg: {
-    height: 80,
-    width: 80,
+    height: 40,
+    width: 40,
     borderRadius: 20,
     alignSelf: "flex-end",
   },

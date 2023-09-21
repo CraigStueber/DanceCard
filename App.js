@@ -12,7 +12,7 @@ import { Profile } from "./pages/Profile/Profile";
 import { Event } from "./pages/Event/Event";
 import { Calendar } from "./pages/Calendar/Calendar";
 import { Messages } from "./pages/Messages/Messages";
-import { Search } from "./pages/Search/Search";
+
 import { EventInfo } from "./pages/EventInfo/EventInfo";
 import { CreateEvent } from "./pages/CreateEvent/CreateEvent";
 const Stack = createNativeStackNavigator();
@@ -46,7 +46,6 @@ export default function App() {
             <Stack.Screen name="Profile" component={Profile}></Stack.Screen>
             <Stack.Screen name="Calendar" component={Calendar}></Stack.Screen>
             <Stack.Screen name="Messages" component={Messages}></Stack.Screen>
-            <Stack.Screen name="Search" component={Search}></Stack.Screen>
             <Stack.Screen name="EventInfo" component={EventInfo}></Stack.Screen>
             <Stack.Screen
               name="CreateEvent"

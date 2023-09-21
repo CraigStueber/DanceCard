@@ -9,7 +9,7 @@ export function Footer({}) {
     <View style={s.container}>
       <TouchableOpacity
         style={s.search_btn}
-        onPress={() => nav.navigate("Search")}
+        onPress={() => nav.navigate("Home")}
       >
         <Ionicons name="md-search" size={35} color="white" />
         <Text style={s.searchTxt}>Search</Text>

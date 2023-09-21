@@ -3,7 +3,7 @@ import { s } from "./Location.style";
 import { LocationCard } from "../../components/LocationCard/LocationCard";
 export function Location({}) {
   return (
-    <ScrollView>
+    <ScrollView style={s.container}>
       <LocationCard />
       <LocationCard />
       <LocationCard />

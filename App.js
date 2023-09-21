@@ -6,8 +6,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Header } from "./components/header/Header";
 import { Footer } from "./components/footer/Footer";
 import { Home } from "./pages/Home/Home";
+import { Location } from "./pages/Location/Location";
 import { LocationProfile } from "./pages/LocationProfile/LocationProfile";
 import { Profile } from "./pages/Profile/Profile";
+import { Event } from "./pages/Event/Event";
+import { Calendar } from "./pages/Calendar/Calendar";
+import { Messages } from "./pages/Messages/Messages";
+import { Search } from "./pages/Search/Search";
+import { EventInfo } from "./pages/EventInfo/EventInfo";
+import { CreateEvent } from "./pages/CreateEvent/CreateEvent";
 const Stack = createNativeStackNavigator();
 
 const navTheme = {
@@ -34,7 +41,17 @@ export default function App() {
               name="LocationProfile"
               component={LocationProfile}
             ></Stack.Screen>
+            <Stack.Screen name="Event" component={Event}></Stack.Screen>
+            <Stack.Screen name="Location" component={Location}></Stack.Screen>
             <Stack.Screen name="Profile" component={Profile}></Stack.Screen>
+            <Stack.Screen name="Calendar" component={Calendar}></Stack.Screen>
+            <Stack.Screen name="Messages" component={Messages}></Stack.Screen>
+            <Stack.Screen name="Search" component={Search}></Stack.Screen>
+            <Stack.Screen name="EventInfo" component={EventInfo}></Stack.Screen>
+            <Stack.Screen
+              name="CreateEvent"
+              component={CreateEvent}
+            ></Stack.Screen>
           </Stack.Navigator>
 
           <View style={s.footer}>

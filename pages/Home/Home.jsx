@@ -10,11 +10,14 @@ export function Home({}) {
       <View style={s.btnContainer}>
         <TouchableOpacity
           style={s.loctionBtn}
-          onPress={() => nav.navigate("LocationProfile")}
+          onPress={() => nav.navigate("Location")}
         >
           <Text style={s.locationTxt}>Location</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={s.activitiesBtn}>
+        <TouchableOpacity
+          style={s.activitiesBtn}
+          onPress={() => nav.navigate("Event")}
+        >
           <Text style={s.activitiesTxt}>Activities</Text>
         </TouchableOpacity>
       </View>

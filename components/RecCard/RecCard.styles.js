@@ -10,6 +10,7 @@ export const s = StyleSheet.create({
     borderColor: "black",
     borderRadius: 10,
     marginVertical: 5,
+    backgroundColor: "#ece4d6",
   },
   activityImage: { height: 80, width: 80, borderRadius: 20 },
   textContainer: { paddingLeft: 20 },

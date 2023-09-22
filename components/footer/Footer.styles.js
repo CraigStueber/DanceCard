@@ -18,7 +18,7 @@ export const s = StyleSheet.create({
   },
   calendarTxt: {
     color: "#28143E",
-    fontFamily: "Konnet-Bold",
+    fontFamily: "Konnet-Italic",
   },
   message_btn: {
     backgroundColor: "#28143E",
@@ -42,6 +42,6 @@ export const s = StyleSheet.create({
   },
   searchTxt: {
     color: "white",
-    fontFamily: "Konnet-Black",
+    fontFamily: "Konnet-Regular",
   },
 });

@@ -25,11 +25,9 @@ const navTheme = {
 
 export default function App() {
   const [isFontLoaded] = useFonts({
-    "Konnet-Black": require("./assets/fonts/Konnect-Black.otf"),
     "Konnet-Italic": require("./assets/fonts/Konnect-BlackItalic.otf"),
-    "Konnet-Bold": require("./assets/fonts/Konnect-Bold.otf"),
     "Konnet-ExtraBold": require("./assets/fonts/Konnect-ExtraBold.otf"),
-    "Konnet-Regular": require("./assets/fonts/Konnet-Regular.otf"),
+    "Konnet-Regular": require("./assets/fonts/Konnect-Regular.otf"),
   });
   return (
     <NavigationContainer theme={navTheme}>

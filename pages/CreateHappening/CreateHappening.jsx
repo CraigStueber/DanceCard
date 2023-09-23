@@ -1,6 +1,6 @@
 import { s } from "./CreateHappening.style";
 import { Text } from "react-native";
 
-export function CreateEvent({}) {
+export function CreateHappening({}) {
   return <Text>Create Event</Text>;
 }

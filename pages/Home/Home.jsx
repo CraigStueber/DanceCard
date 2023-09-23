@@ -16,12 +16,12 @@ export function Home({}) {
         </TouchableOpacity>
         <TouchableOpacity
           style={s.activitiesBtn}
-          onPress={() => nav.navigate("Event")}
+          onPress={() => nav.navigate("Happening")}
         >
           <Text style={s.activitiesTxt}>Activities</Text>
         </TouchableOpacity>
       </View>
-      <Text style={s.recHeader}>Recommended More Text</Text>
+      <Text style={s.recHeader}>Recommended</Text>
       <ScrollView style={s.recContainer}>
         <RecCard />
         <RecCard />

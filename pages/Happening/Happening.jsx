@@ -1,10 +1,10 @@
 import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 import { RecCard } from "../../components/RecCard/RecCard";
-import { s } from "./Event.style";
+import { s } from "./Happening.style";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 
-export function Event({}) {
+export function Happening({}) {
   const nav = useNavigation();
   return (
     <View>

@@ -9,7 +9,7 @@ import { Home } from "./pages/Home/Home";
 import { Location } from "./pages/Location/Location";
 import { LocationProfile } from "./pages/LocationProfile/LocationProfile";
 import { Profile } from "./pages/Profile/Profile";
-import { Event } from "./pages/Event/Event";
+import { Happening } from "./pages/Happening/Happening";
 import { Calendar } from "./pages/Calendar/Calendar";
 import { Messages } from "./pages/Messages/Messages";
 import { useFonts } from "expo-font";
@@ -47,7 +47,10 @@ export default function App() {
                 name="LocationProfile"
                 component={LocationProfile}
               ></Stack.Screen>
-              <Stack.Screen name="Event" component={Event}></Stack.Screen>
+              <Stack.Screen
+                name="Happening"
+                component={Happening}
+              ></Stack.Screen>
               <Stack.Screen name="Location" component={Location}></Stack.Screen>
               <Stack.Screen name="Profile" component={Profile}></Stack.Screen>
               <Stack.Screen name="Calendar" component={Calendar}></Stack.Screen>

@@ -21,7 +21,7 @@ export function LocationCard({}) {
         </TouchableOpacity>
         <TouchableOpacity
           style={s.eventBtn}
-          onPress={() => nav.navigate("Event")}
+          onPress={() => nav.navigate("Happening")}
         >
           <Text style={s.btnText}>Search Events</Text>
         </TouchableOpacity>

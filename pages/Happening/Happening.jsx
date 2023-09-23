@@ -10,9 +10,9 @@ export function Happening({}) {
     <View>
       <TouchableOpacity
         style={s.createContainer}
-        onPress={() => nav.navigate("CreateEvent")}
+        onPress={() => nav.navigate("CreateHappening")}
       >
-        <Text style={s.createText}>Create Activity</Text>
+        <Text style={s.createText}>Create a Happening</Text>
       </TouchableOpacity>
       <View style={s.filterContainer}>
         <TouchableOpacity style={s.dropdown}>

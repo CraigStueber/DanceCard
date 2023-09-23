@@ -21,7 +21,7 @@ export function Home({}) {
           <Text style={s.activitiesTxt}>Activities</Text>
         </TouchableOpacity>
       </View>
-      <Text style={s.recHeader}>Recommended</Text>
+      <Text style={s.recHeader}>Recommended More Text</Text>
       <ScrollView style={s.recContainer}>
         <RecCard />
         <RecCard />

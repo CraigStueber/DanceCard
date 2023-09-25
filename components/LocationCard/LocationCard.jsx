@@ -3,19 +3,21 @@ import { s } from "./LocationCard.style";
 import OEJ from "../../assets/OEJ.png";
 import { useNavigation } from "@react-navigation/native";
 
-export function LocationCard({}) {
+export function LocationCard({ location }) {
   const nav = useNavigation();
+
+  const imageUri = location.image;
   return (
     <TouchableOpacity
       style={s.container}
       onPress={() => nav.navigate("LocationProfile")}
     >
-      <Image source={OEJ} style={s.locationLogo} />
+      <Image source={imageUri} style={s.locationLogo} />
       <View style={s.locationNameContainer}>
-        <Text style={s.locationName}>One Eyed Jacques</Text>
+        <Text style={s.locationName}>{location.name}</Text>
         <TouchableOpacity
           style={s.locationBtn}
-          onPress={() => nav.navigate("LocationProfile")}
+          onPress={() => nav.navigate("LocationProfile", { location })}
         >
           <Text style={s.btnText}>Location Info</Text>
         </TouchableOpacity>

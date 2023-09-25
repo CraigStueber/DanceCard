@@ -1,11 +1,14 @@
 import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, paddingVertical: 10 },
   profileContainer: {
     flexDirection: "row",
   },
-  locationLogoImg: {},
+  locationLogoImg: {
+    width: 200,
+    height: 200,
+  },
   locationTextContainer: {
     padding: 20,
   },

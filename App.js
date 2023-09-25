@@ -17,6 +17,7 @@ import { EventInfo } from "./pages/EventInfo/EventInfo";
 import { CreateHappening } from "./pages/CreateHappening/CreateHappening";
 import { Search } from "./pages/Search/Search";
 import { Friends } from "./pages/Friends/Friends";
+
 const Stack = createNativeStackNavigator();
 
 const navTheme = {

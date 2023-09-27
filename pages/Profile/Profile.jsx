@@ -29,6 +29,14 @@ export function Profile({}) {
         </Text>
       </View>
       <View style={s.secondHalf}>
+        <View style={s.activities}>
+          <Text style={s.actHeader}>Favorite Activities</Text>
+          <Text style={s.activity}>Basketball</Text>
+          <Text style={s.activity}>Tennis</Text>
+          <Text style={s.activity}>40K</Text>
+          <Text style={s.activity}>Biking</Text>
+          <Text style={s.activity}>Hiking</Text>
+        </View>
         <Image
           style={s.referenceImg}
           source={{ uri: "https://i.pravatar.cc/600" }}

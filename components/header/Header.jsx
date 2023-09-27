@@ -1,6 +1,6 @@
 import { TouchableOpacity, View, Image, Text } from "react-native";
 import { s } from "./Header.styles";
-import danceCard from "../../assets/dance_card-02.png";
+import danceCard from "../../assets/danceCardLogo.png";
 import { useNavigation } from "@react-navigation/native";
 
 export function Header({}) {

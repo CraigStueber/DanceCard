@@ -12,7 +12,7 @@ export function Friends({}) {
               <View style={s.nameSection}>
                 <Text style={s.label}>Nickname: </Text>
                 <Text style={s.name}>{friends.userName}</Text>
-
+                <View style={s.borderLine}></View>
                 <Text style={s.label}>Real Name:</Text>
                 <Text style={s.name}> {friends.name}</Text>
               </View>

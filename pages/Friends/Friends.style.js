@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
   container: {
     backgroundColor: "white",
+    paddingHorizontal: 10,
   },
 
   btn: {
@@ -11,11 +12,13 @@ export const s = StyleSheet.create({
     backgroundColor: "#c4c5de",
     paddingVertical: 10,
     paddingHorizontal: 5,
+    borderRadius: 10,
   },
 
   profileImage: {
     width: 150,
     height: 150,
+    borderRadius: 100,
   },
   name: {
     fontSize: 20,

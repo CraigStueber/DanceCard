@@ -21,6 +21,8 @@ export const s = StyleSheet.create({
   },
   icon: {
     color: "#593a7b",
+    height: 75,
+    width: 75,
   },
   subTitleContainer: {
     flexDirection: "row",

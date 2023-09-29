@@ -8,10 +8,7 @@ export function LocationCard({ location }) {
 
   const imageUri = location.image;
   return (
-    <TouchableOpacity
-      style={s.container}
-      onPress={() => nav.navigate("LocationProfile")}
-    >
+    <View style={s.container}>
       <Image source={imageUri} style={s.locationLogo} />
       <View style={s.locationNameContainer}>
         <Text style={s.locationName}>{location.name}</Text>
@@ -28,6 +25,6 @@ export function LocationCard({ location }) {
           <Text style={s.btnText}>Search Events</Text>
         </TouchableOpacity>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 }

@@ -1,38 +1,41 @@
 import { s } from "./Profile.style";
 import { Text, Image, View, TouchableOpacity } from "react-native";
+import { useRoute } from "@react-navigation/native";
+export function Profile({ friends }) {
+  const { params } = useRoute();
+  const profileImageUri = params.friends.profileImage;
+  const realImageUri = params.friends.realImage;
+  const activities = params.friends.Activties;
 
-export function Profile({}) {
   return (
     <View style={s.container}>
       <View style={s.profileContainer}>
-        <Image
-          style={s.profileImg}
-          source={{ uri: "https://i.pravatar.cc/600" }}
-        />
+        <Image style={s.profileImg} source={profileImageUri} />
         <View style={s.profileInfoContainer}>
-          <Text style={s.userName}>TheNineFigures</Text>
-          <Text style={s.name}>Frodo Baggins</Text>
-          <Text style={s.userLocation}>Hobbiton, Shire</Text>
+          <Text style={s.userName}>{params.friends.userName}</Text>
+          <Text style={s.name}>{params.friends.name}</Text>
+          <Text style={s.userLocation}>
+            {params.friends.city}, {params.friends.state}
+          </Text>
         </View>
       </View>
 
       <View style={s.discriptionContainer}>
         <Text style={s.descriptionHeader}>Description</Text>
-        <Text style={s.descriptionText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
+        <Text style={s.descriptionText}>{params.friends.description}</Text>
       </View>
       <View style={s.secondHalf}>
-        <Image
-          style={s.referenceImg}
-          source={{ uri: "https://i.pravatar.cc/600" }}
-        />
+        <View style={s.activities}>
+          <Text style={s.actHeader}>Favorite Activities</Text>
+          {activities.map((activity) => {
+            return (
+              <Text key={activity} style={s.activity}>
+                {activity}
+              </Text>
+            );
+          })}
+        </View>
+        <Image style={s.referenceImg} source={realImageUri} />
       </View>
     </View>
   );

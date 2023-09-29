@@ -2,13 +2,12 @@ import { View, Image, Text, TouchableOpacity } from "react-native";
 import { s } from "./RecCard.styles";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
-import D20 from "../../assets/D20.png";
 
 export function RecCard({}) {
   const nav = useNavigation();
-  const ball = "basketball-outline";
-  const wand = "color-wand-sharp";
-  const fitness = "fitness-outline";
+  const Bike = require("../../assets/icons/DCbike.png");
+  const d20 = require("../../assets/icons/DCd20.png");
+  const dumbell = require("../../assets/icons/DCdumbell.png");
   const AoS = "shield";
 
   return (
@@ -17,9 +16,9 @@ export function RecCard({}) {
         style={s.container}
         onPress={() => nav.navigate("EventInfo")}
       >
-        <Ionicons name={ball} size={80} style={s.icon} />
+        <Image style={s.icon} source={Bike} />
         <View style={s.textContainer}>
-          <Text style={s.eventTitle}>Basketball</Text>
+          <Text style={s.eventTitle}>Biking</Text>
           <View style={s.subTitleContainer}>
             <Text style={s.date}>Sept 28</Text>
             <Text style={s.time}>2:00pm</Text>
@@ -34,7 +33,7 @@ export function RecCard({}) {
         style={s.container}
         onPress={() => nav.navigate("EventInfo")}
       >
-        <Ionicons name={wand} size={80} style={s.icon} />
+        <Image style={s.icon} source={d20} />
         <View style={s.textContainer}>
           <Text style={s.eventTitle}>Dungeon & Dragons</Text>
           <View style={s.subTitleContainer}>
@@ -51,7 +50,7 @@ export function RecCard({}) {
         style={s.container}
         onPress={() => nav.navigate("EventInfo")}
       >
-        <Ionicons name={fitness} size={80} style={s.icon} />
+        <Image style={s.icon} source={dumbell} />
         <View style={s.textContainer}>
           <Text style={s.eventTitle}>Weight Lifting</Text>
           <View style={s.subTitleContainer}>

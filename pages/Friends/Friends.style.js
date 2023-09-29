@@ -23,18 +23,9 @@ export const s = StyleSheet.create({
   name: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#593a7b",
   },
   nameSection: {
     paddingHorizontal: 20,
     paddingVertical: 10,
-  },
-  borderLine: {
-    height: 5,
-    backgroundColor: "#593a7b",
-    marginVertical: 10,
-  },
-  label: {
-    color: "#593a7b",
   },
 });

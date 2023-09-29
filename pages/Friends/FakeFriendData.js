@@ -2,7 +2,7 @@ export const friendsList = [
   {
     id: 1,
     name: "Bob",
-    userName: "Dunk-King",
+    userName: "BobSlays",
     city: "Richmond",
     state: "VA",
     description:
@@ -14,7 +14,7 @@ export const friendsList = [
   {
     id: 2,
     name: "James",
-    userName: "LemonRuss",
+    userName: "1000SonsSuck",
     city: "Richmond",
     state: "VA",
     description:
@@ -26,7 +26,7 @@ export const friendsList = [
   {
     id: 3,
     name: "Charlie",
-    userName: "ChessNerd",
+    userName: "Not Scott",
     city: "Richmond",
     state: "VA",
     description:

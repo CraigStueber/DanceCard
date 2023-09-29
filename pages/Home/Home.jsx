@@ -24,6 +24,8 @@ export function Home({}) {
       <Text style={s.recHeader}>Recommended</Text>
       <ScrollView style={s.recContainer}>
         <RecCard />
+        <RecCard />
+        <RecCard />
       </ScrollView>
     </View>
   );

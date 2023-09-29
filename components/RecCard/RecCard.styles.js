@@ -17,10 +17,6 @@ export const s = StyleSheet.create({
   eventTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#593a7b",
-  },
-  icon: {
-    color: "#593a7b",
   },
   subTitleContainer: {
     flexDirection: "row",

@@ -14,7 +14,6 @@ export const s = StyleSheet.create({
     fontSize: 25,
     justifyContent: "flex-start",
     color: "white",
-    fontWeight: "900",
   },
   profileImg: {
     height: 40,

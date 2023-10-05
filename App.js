@@ -17,7 +17,7 @@ import { EventInfo } from "./pages/EventInfo/EventInfo";
 import { CreateHappening } from "./pages/CreateHappening/CreateHappening";
 import { Search } from "./pages/Search/Search";
 import { Friends } from "./pages/Friends/Friends";
-
+import { UserProfile } from "./pages/UserProfile/UserProfile";
 const Stack = createNativeStackNavigator();
 
 const navTheme = {
@@ -60,6 +60,10 @@ export default function App() {
               <Stack.Screen name="Messages" component={Messages}></Stack.Screen>
               <Stack.Screen name="Search" component={Search}></Stack.Screen>
               <Stack.Screen name="Friends" component={Friends}></Stack.Screen>
+              <Stack.Screen
+                name="UserProfile"
+                component={UserProfile}
+              ></Stack.Screen>
               <Stack.Screen
                 name="EventInfo"
                 component={EventInfo}

@@ -1,6 +1,13 @@
 import { s } from "./Calendar.style";
-import { Text } from "react-native";
-
+import { Text, View } from "react-native";
+import { MonthCalendar } from "../../components/MonthCalendar/MonthCalendar";
+import { Agenda } from "../../components/Agenda/Agenda";
 export function Calendar({}) {
-  return <Text>Calendar Page</Text>;
+  return (
+    <View>
+      <Text>Calendar Page</Text>
+      <MonthCalendar />
+      <Agenda />
+    </View>
+  );
 }

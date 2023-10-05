@@ -8,7 +8,7 @@ export function RecCard({}) {
   const Bike = require("../../assets/icons/DCbike.png");
   const d20 = require("../../assets/icons/DCd20.png");
   const dumbell = require("../../assets/icons/DCdumbell.png");
-  const AoS = "shield";
+  const AoS = require("../../assets/icons/DCdice.png");
 
   return (
     <>

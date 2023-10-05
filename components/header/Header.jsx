@@ -15,11 +15,11 @@ export function Header({}) {
       </TouchableOpacity>
       <TouchableOpacity
         style={s.profileImgContainer}
-        onPress={() => nav.navigate("Profile")}
+        onPress={() => nav.navigate("UserProfile")}
       >
         <Image
           style={s.profileImg}
-          source={{ uri: "https://i.pravatar.cc/600" }}
+          source={require("../../assets/picard.jpg")}
         />
       </TouchableOpacity>
     </View>

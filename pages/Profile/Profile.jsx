@@ -1,6 +1,7 @@
 import { s } from "./Profile.style";
 import { Text, Image, View, TouchableOpacity } from "react-native";
 import { useRoute } from "@react-navigation/native";
+
 export function Profile({ friends }) {
   const { params } = useRoute();
   const profileImageUri = params.friends.profileImage;

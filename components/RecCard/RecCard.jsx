@@ -67,7 +67,7 @@ export function RecCard({}) {
         style={s.container}
         onPress={() => nav.navigate("EventInfo")}
       >
-        <Ionicons name={AoS} size={80} style={s.icon} />
+        <Image style={s.icon} source={AoS} />
         <View style={s.textContainer}>
           <Text style={s.eventTitle}>Age of Sigmar</Text>
           <View style={s.subTitleContainer}>

@@ -20,7 +20,6 @@ export const s = StyleSheet.create({
     color: "#593a7b",
   },
   icon: {
-    color: "#593a7b",
     height: 75,
     width: 75,
   },

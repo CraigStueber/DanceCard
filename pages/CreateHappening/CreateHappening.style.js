@@ -6,6 +6,9 @@ export const s = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     padding: 10,
+    backgroundColor: "white",
+    borderRadius: 10,
+    borderColor: "transparent",
   },
   label: {
     fontSize: 20,
@@ -24,6 +27,9 @@ export const s = StyleSheet.create({
     textAlignVertical: "top",
     borderWidth: 1,
     padding: 10,
+    backgroundColor: "white",
+    borderRadius: 10,
+    borderColor: "transparent",
   },
   subBtn: {
     width: "50%",
@@ -31,12 +37,16 @@ export const s = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 20,
     paddingVertical: 10,
-    backgroundColor: "#28143E",
+    backgroundColor: "#D07028",
+    borderRadius: 10,
   },
   subtext: {
     color: "white",
     textAlign: "center",
     fontSize: 20,
     fontWeight: "bold",
+  },
+  dropdownMenu: {
+    borderColor: "transparent",
   },
 });

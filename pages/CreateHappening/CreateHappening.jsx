@@ -1,10 +1,11 @@
 import { s } from "./CreateHappening.style";
 import { Text, View, TextInput, Image, TouchableOpacity } from "react-native";
 import { useState } from "react";
-
+import DateTimePicker from "@react-native-community/datetimepicker";
 import DropDownPicker from "react-native-dropdown-picker";
 export function CreateHappening({}) {
-  const [chosenDate, setChosenDate] = useState(new Date());
+  const [date, setDate] = useState(new Date());
+  const [showPicker, setShowPicker] = useState(false);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -32,7 +33,7 @@ export function CreateHappening({}) {
   return (
     <View>
       <View style={s.container}>
-        <Text style={s.label}>Happening Title</Text>
+        <Text style={s.label}>What's Happening</Text>
         <TextInput
           style={s.fullInput}
           placeholder="Tap Lessons..."
@@ -42,6 +43,7 @@ export function CreateHappening({}) {
       <View style={s.twoInputContainer}>
         <View style={s.dropdownContainer}>
           <DropDownPicker
+            style={s.dropdownMenu}
             placeholder="Pick an Icon"
             open={open}
             value={value}
@@ -51,8 +53,7 @@ export function CreateHappening({}) {
             setItems={setItems}
           />
         </View>
-
-        <Text style={s.placehoderText}>DATE PICKER</Text>
+        <DateTimePicker mode="date" display="spinner" value={date} />
       </View>
       <View style={s.twoInputContainer}>
         <View style={s.dropdownContainer}>
@@ -94,7 +95,8 @@ export function CreateHappening({}) {
         <Text style={s.label}>Happening Description</Text>
         <TextInput
           style={s.descriptInput}
-          placeholder="Let's dance all night..."
+          placeholder="Let's dance all night...
+          "
           keyboardType="default"
           multiline={true}
           numberOfLines={10}

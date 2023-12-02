@@ -4,9 +4,8 @@ import { MonthCalendar } from "../../components/MonthCalendar/MonthCalendar";
 import { Agenda } from "../../components/Agenda/Agenda";
 export function Calendar({}) {
   return (
-    <View>
+    <View style={s.container}>
       <Text>Calendar Page</Text>
-      <MonthCalendar />
       <Agenda />
     </View>
   );

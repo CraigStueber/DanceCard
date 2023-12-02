@@ -3,6 +3,7 @@ import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
 
+
 export function LocationProfile() {
   const { params } = useRoute();
   const imageURI = params.location.image;

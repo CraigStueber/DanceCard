@@ -1,11 +1,14 @@
 import { s } from "./CreateHappening.style";
-import { Text, View, TextInput, Image, TouchableOpacity } from "react-native";
+ 
 import { useState } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import DropDownPicker from "react-native-dropdown-picker";
 export function CreateHappening({}) {
   const [date, setDate] = useState(new Date());
-  const [showPicker, setShowPicker] = useState(false);
+  const [calDate, setCalDate] = useState(date.toDateString());
+  const [time, setTime] = useState(date.toTimeString());
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showTimePicker, setShowTimePicker] = useState(false);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -22,6 +25,8 @@ export function CreateHappening({}) {
     {
       label: "RPG",
       value: "D20",
+
+      
       icon: () => (
         <Image
           source={require("../../assets/icons/DCd20.png")}
@@ -30,6 +35,25 @@ export function CreateHappening({}) {
       ),
     },
   ]);
+  console.log(date);
+  const showDate = () => {
+    setShowDatePicker(!showDatePicker);
+  };
+  const showTime = () => {
+    setShowTimePicker(!showTimePicker);
+  };
+  const onChange = ({ type }, selectedDate) => {
+    if (type == "set") {
+      const currentDate = selectedDate;
+      setDate(currentDate);
+      if (Platform.OS === "android") {
+        showDate();
+      }
+    } else {
+      showDate();
+    }
+  };
+
   return (
     <View>
       <View style={s.container}>
@@ -41,19 +65,40 @@ export function CreateHappening({}) {
         />
       </View>
       <View style={s.twoInputContainer}>
-        <View style={s.dropdownContainer}>
-          <DropDownPicker
-            style={s.dropdownMenu}
-            placeholder="Pick an Icon"
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
+        <Pressable onPress={showDate}>
+          <Text style={s.label}>When is it Happening?</Text>
+          <TextInput
+            style={s.fullInput}
+            placeholder="Dance Hall..."
+            keyboardType="default"
+            value={calDate}
+            editable={false}
           />
-        </View>
-        <DateTimePicker mode="date" display="spinner" value={date} />
+        </Pressable>
+
+        {showDatePicker && (
+          <DateTimePicker
+            mode="date"
+            display="spinner"
+            value={date}
+            onChange={onChange}
+          />
+        )}
+
+        <Pressable onPress={showTime}>
+          <Text style={s.label}>What Time?</Text>
+          <TextInput
+            style={s.fullInput}
+            placeholder="12:00am"
+            keyboardType="default"
+            value={time}
+            editable={false}
+          />
+        </Pressable>
+
+        {showTimePicker && (
+          <DateTimePicker mode="time" display="spinner" value={date} />
+        )}
       </View>
       <View style={s.twoInputContainer}>
         <View style={s.dropdownContainer}>
@@ -82,6 +127,21 @@ export function CreateHappening({}) {
             keyboardType="default"
           />
         </View>
+        <View style={s.dropdownContainer}>
+          <Text style={s.label}>Pick Icon</Text>
+          <DropDownPicker
+            style={s.dropdownMenu}
+            placeholder="Pick an Icon"
+            open={open}
+            value={value}
+            items={items}
+            setOpen={setOpen}
+            setValue={setValue}
+            setItems={setItems}
+          />
+        </View>
+      </View>
+      <View style={s.twoInputContainer}>
         <View style={s.dropdownContainer}>
           <Text style={s.label}>Attendees</Text>
           <TextInput

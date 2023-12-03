@@ -26,7 +26,7 @@ export function Footer({}) {
         onPress={() => nav.navigate("Messages")}
       >
         <Ionicons name="mail-outline" size={35} color="white" />
-        <Text style={s.messageTxt}>Messages{"(5)"}</Text>
+        <Text style={s.messageTxt}>Messages</Text>
       </TouchableOpacity>
     </View>
   );

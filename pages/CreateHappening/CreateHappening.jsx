@@ -1,5 +1,11 @@
 import { s } from "./CreateHappening.style";
- 
+import {
+  View,
+  Text,
+  TextInput,
+  Pressable,
+  TouchableOpacity,
+} from "react-native";
 import { useState } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import DropDownPicker from "react-native-dropdown-picker";
@@ -26,7 +32,6 @@ export function CreateHappening({}) {
       label: "RPG",
       value: "D20",
 
-      
       icon: () => (
         <Image
           source={require("../../assets/icons/DCd20.png")}

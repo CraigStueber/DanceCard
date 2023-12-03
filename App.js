@@ -18,6 +18,7 @@ import { CreateHappening } from "./pages/CreateHappening/CreateHappening";
 import { Search } from "./pages/Search/Search";
 import { Friends } from "./pages/Friends/Friends";
 import { UserProfile } from "./pages/UserProfile/UserProfile";
+import { DirectMessagePage } from "./pages/DirectMessage/DirectMessagePage";
 const Stack = createNativeStackNavigator();
 
 const navTheme = {
@@ -60,6 +61,10 @@ export default function App() {
               <Stack.Screen name="Messages" component={Messages}></Stack.Screen>
               <Stack.Screen name="Search" component={Search}></Stack.Screen>
               <Stack.Screen name="Friends" component={Friends}></Stack.Screen>
+              <Stack.Screen
+                name="DirectMessagePage"
+                component={DirectMessagePage}
+              ></Stack.Screen>
               <Stack.Screen
                 name="UserProfile"
                 component={UserProfile}

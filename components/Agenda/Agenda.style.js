@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
   container: {
     flexDirection: "row",
-    paddingHorizontal: 30,
+
     backgroundColor: "#ece4d6",
     justifyContent: "center",
     alignContent: "center",
     borderWidth: 2,
-    borderColor: "black",
+    borderColor: "#593a7b",
     borderRadius: 10,
     marginVertical: 5,
   },
@@ -22,25 +22,31 @@ export const s = StyleSheet.create({
     color: "black",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#593a7b",
   },
   month: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#593a7b",
+    color: "white",
   },
   day: {
     fontSize: 40,
     fontWeight: "bold",
-    color: "#593a7b",
+    color: "white",
   },
   time: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#593a7b",
+    color: "white",
   },
   agendaRightContainer: {
     flex: 2,
     justifyContent: "center",
     alignItems: "center",
+  },
+  title: {
+    fontSize: 25,
+    color: "#593a7b",
+    fontWeight: "bold",
   },
 });

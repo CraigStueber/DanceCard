@@ -1,12 +1,23 @@
 import { s } from "./Calendar.style";
-import { Text, View } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import { MonthCalendar } from "../../components/MonthCalendar/MonthCalendar";
 import { Agenda } from "../../components/Agenda/Agenda";
 export function Calendar({}) {
   return (
-    <View style={s.container}>
-      <Text>Calendar Page</Text>
-      <Agenda />
-    </View>
+    <>
+      <Text style={s.title}>CaptainPicard's Upcoming Events</Text>
+      <ScrollView style={s.container}>
+        <Agenda />
+        <Agenda />
+        <Agenda />
+        <Agenda />
+        <Agenda />
+        <Agenda />
+        <Agenda />
+        <Agenda />
+        <Agenda />
+        <Agenda />
+      </ScrollView>
+    </>
   );
 }

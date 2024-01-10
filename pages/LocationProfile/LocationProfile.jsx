@@ -2,20 +2,12 @@ import { s } from "./LocationProfile.style";
 import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
-import { useState } from "react";
+
 
 export function LocationProfile() {
-  const [openActivities, setOpenActivities] = useState(false);
-  const [openHappenings, setOpenHappenings] = useState(false);
   const { params } = useRoute();
   const imageURI = params.location.image;
 
-  const OpenAct = () => {
-    openActivities ? setOpenActivities(false) : setOpenActivities(true);
-  };
-  const OpenHapp = () => {
-    openHappenings ? setOpenHappenings(false) : setOpenHappenings(true);
-  };
   return (
     <ScrollView style={s.container}>
       <View style={s.profileContainer}>
@@ -69,8 +61,7 @@ export function LocationProfile() {
         <Text style={s.descriptionHeadline}>Description</Text>
         <Text style={s.descriptionText}>{params.location.description}</Text>
       </View>
-
-      <TouchableOpacity style={s.activitiesDropDown} onPress={OpenAct()}>
+      <TouchableOpacity style={s.activitiesDropDown}>
         <Text style={s.activitiesHeader}>Location Activities</Text>
         <Ionicons
           name="ios-arrow-down-circle-outline"
@@ -78,12 +69,7 @@ export function LocationProfile() {
           color="white"
         />
       </TouchableOpacity>
-      {openActivities && (
-        <View>
-          <Text>I am Open</Text>
-        </View>
-      )}
-      <TouchableOpacity style={s.activitiesDropDown} onPress={OpenHapp()}>
+      <TouchableOpacity style={s.activitiesDropDown}>
         <Text style={s.activitiesHeader}>Upcoming Events</Text>
         <Ionicons
           name="ios-arrow-down-circle-outline"
@@ -91,11 +77,6 @@ export function LocationProfile() {
           color="white"
         />
       </TouchableOpacity>
-      {openHappenings && (
-        <View>
-          <Text>I am Open</Text>
-        </View>
-      )}
     </ScrollView>
   );
 }

@@ -1,39 +1,56 @@
 import { s } from "./EventInfo.style";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { useState } from "react";
+import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
+import { fetchIcon } from "../../utils/iconfunction";
 export function EventInfo({}) {
+  const [show, setShow] = useState(false);
+  const { params } = useRoute();
   const nav = useNavigation();
+
+  const attendeesMap = params.happening.attendees.map((people) => {
+    return (
+      <View style={s.userSubViews}>
+        <TouchableOpacity
+          onPress={() => nav.navigate("UserProfile")}
+          style={s.userLine}
+        >
+          <Ionicons name="checkmark-circle" size={24} color="#28143E" />
+          <Text style={s.userTxt}>{people}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  });
+  const ToggleShow = () => {
+    setShow(!show);
+  };
+  let icon = fetchIcon(params.happening.icon);
   return (
     <View style={s.container}>
       <View style={s.topContainer}>
-        <Image
-          source={require("../../assets/icons/DCdice.png")}
-          style={s.iconImage}
-        />
+        <Image source={icon} style={s.iconImage} />
         <View style={s.infoView}>
-          <Text style={s.title}>Happening Title</Text>
-          <Text style={s.infoText}>Date</Text>
-          <Text style={s.infoText}>Time</Text>
-          <Text style={s.infoText}>Location</Text>
-          <Text style={s.infoText}>Address</Text>
+          <Text style={s.title}>{params.happening.name}</Text>
+          <Text style={s.infoText}>Date: {params.happening.date}</Text>
+          <Text style={s.infoText}>Time: {params.happening.time}</Text>
+          <Text style={s.infoText}>Location: {params.happening.location}</Text>
+          <Text style={s.infoText}>Address:</Text>
+          <Text style={s.infoText}>{params.happening.address}</Text>
+          <Text style={s.infoText}>City: {params.happening.city}</Text>
         </View>
       </View>
       <View style={s.descriptionContainer}>
         <Text style={s.descriptionTitle}>Happening Description</Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
+        <Text>{params.happening.description}</Text>
       </View>
       <View style={s.playersContainers}>
-        <TouchableOpacity style={s.attendiesBtn}>
-          <Text style={s.attendiesTitle}>Attendees 2/8</Text>
+        <TouchableOpacity style={s.attendiesBtn} onPress={() => ToggleShow()}>
+          <Text style={s.attendiesTitle}>
+            Attendees {params.happening.attendees.length} /
+            {params.happening.num_attendees}
+          </Text>
           <Ionicons
             name="ios-arrow-down-circle-outline"
             size={50}
@@ -41,44 +58,7 @@ export function EventInfo({}) {
             style={s.icon}
           />
         </TouchableOpacity>
-        <View style={s.usersContainer}>
-          <View style={s.userSubViews}>
-            <TouchableOpacity
-              onPress={() => nav.navigate("UserProfile")}
-              style={s.userLine}
-            >
-              <Ionicons name="checkmark-circle" size={24} color="#28143E" />
-              <Text style={s.userTxt}>UserName1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => nav.navigate("UserProfile")}
-              style={s.userLine}
-            >
-              <Ionicons name="checkmark-circle" size={24} color="#28143E" />
-              <Text style={s.userTxt}>UserName2</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={s.userLine}>
-              <Text style={s.userTxt}></Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={s.userLine}>
-              <Text style={s.userTxt}></Text>
-            </TouchableOpacity>
-          </View>
-          <View style={s.userSubViews}>
-            <TouchableOpacity style={s.userLine}>
-              <Text style={s.userTxt}></Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={s.userLine}>
-              <Text style={s.userTxt}></Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={s.userLine}>
-              <Text style={s.userTxt}></Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={s.userLine}>
-              <Text style={s.userTxt}></Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        {show && <ScrollView style={s.attContainer}>{attendeesMap}</ScrollView>}
       </View>
     </View>
   );

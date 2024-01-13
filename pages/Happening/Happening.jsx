@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, TouchableOpacity, Image } from "react-native";
 
 import { supabase } from "../../client";
-import { RecCard } from "../../components/RecCard/RecCard";
+
 import { s } from "./Happening.style";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
-
+import { fetchIcon } from "../../utils/iconfunction";
 export function Happening({}) {
   const [happenings, setHappenings] = useState([]);
   const [locations, setLocations] = useState([]);
@@ -44,19 +44,39 @@ export function Happening({}) {
     if (error) {
       console.error("Error fetching: ", error);
       return;
+    } else if (loading) {
+      content = <Text style={{ fontSize: 24, color: "gray" }}>Loading...</Text>;
     } else {
       return Location;
     }
   }
-  const happeningList = happenings.map((item) => (
-    <View key={item.id}>
-      <Text>{item.name}</Text>
-      <Text>{item.description}</Text>
-      <Text>
-        {item.attendees.length} / {item.num_attendees}
-      </Text>
-    </View>
-  ));
+
+  const happeningList = happenings.map((item) => {
+    let dice = fetchIcon(item.icon);
+    const happening = item;
+    return (
+      <TouchableOpacity
+        style={s.containerCard}
+        key={item.id}
+        onPress={() => nav.navigate("EventInfo", { happening })}
+      >
+        <Image style={s.icon} source={dice} />
+        <View style={s.textContainer}>
+          <Text style={s.eventTitle}>{item.name}</Text>
+          <View style={s.subTitleContainer}>
+            <Text style={s.date}>{item.date}</Text>
+            <Text style={s.time}>{item.time}</Text>
+          </View>
+          <View style={s.locationContainer}>
+            <Text style={s.location}>{item.location}</Text>
+            <Text style={s.players}>
+              {item.attendees.length} / {item.num_attendees}
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
+  });
   return (
     <View>
       <TouchableOpacity
@@ -65,7 +85,7 @@ export function Happening({}) {
       >
         <Text style={s.createText}>Create a Happening</Text>
       </TouchableOpacity>
-      <View>{happeningList}</View>
+
       <View style={s.filterContainer}>
         <TouchableOpacity style={s.dropdown}>
           <Text style={s.filterTxt}>Filter</Text>
@@ -73,18 +93,7 @@ export function Happening({}) {
         </TouchableOpacity>
       </View>
       <ScrollView style={s.container}>
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
-        <RecCard />
+        {happenings && <View>{happeningList}</View>}
       </ScrollView>
     </View>
   );

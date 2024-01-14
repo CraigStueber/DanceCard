@@ -44,8 +44,6 @@ export function Happening({}) {
     if (error) {
       console.error("Error fetching: ", error);
       return;
-    } else if (loading) {
-      content = <Text style={{ fontSize: 24, color: "gray" }}>Loading...</Text>;
     } else {
       return Location;
     }

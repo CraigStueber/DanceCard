@@ -55,4 +55,15 @@ export const s = StyleSheet.create({
     textAlign: "center",
     alignSelf: "center",
   },
+  createContainer: {
+    justifyContent: "center",
+    paddingVertical: 20,
+    backgroundColor: "#d07028",
+  },
+  createText: {
+    textAlign: "center",
+    fontSize: 30,
+    color: "white",
+  },
+  attContainer: {},
 });

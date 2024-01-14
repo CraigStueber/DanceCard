@@ -12,7 +12,7 @@ export function EventInfo({}) {
 
   const attendeesMap = params.happening.attendees.map((people) => {
     return (
-      <View style={s.userSubViews}>
+      <View style={s.userSubViews} key={people}>
         <TouchableOpacity
           onPress={() => nav.navigate("UserProfile")}
           style={s.userLine}
@@ -45,6 +45,9 @@ export function EventInfo({}) {
         <Text style={s.descriptionTitle}>Happening Description</Text>
         <Text>{params.happening.description}</Text>
       </View>
+      <TouchableOpacity style={s.createContainer}>
+        <Text style={s.createText}>Join Happening</Text>
+      </TouchableOpacity>
       <View style={s.playersContainers}>
         <TouchableOpacity style={s.attendiesBtn} onPress={() => ToggleShow()}>
           <Text style={s.attendiesTitle}>

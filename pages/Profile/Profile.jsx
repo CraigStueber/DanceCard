@@ -2,33 +2,35 @@ import { s } from "./Profile.style";
 import { Text, Image, View, TouchableOpacity } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
-export function Profile({ friends }) {
+export function Profile() {
   const { params } = useRoute();
-  const profileImageUri = params.friends.profileImage;
-  const realImageUri = params.friends.realImage;
-  const activities = params.friends.Activties;
 
   return (
     <View style={s.container}>
       <View style={s.profileContainer}>
-        <Image style={s.profileImg} source={profileImageUri} />
+        <Image
+          style={s.profileImg}
+          source={{
+            uri: `https://inoxtkubxynhbuslvgyv.supabase.co/storage/v1/object/public/avatar/${params.friends.avatar}`,
+          }}
+        />
         <View style={s.profileInfoContainer}>
-          <Text style={s.userName}>{params.friends.userName}</Text>
-          <Text style={s.name}>{params.friends.name}</Text>
+          <Text style={s.userName}>{params.friends.UserName}</Text>
+          <Text style={s.name}>{params.friends.FirstName}</Text>
           <Text style={s.userLocation}>
-            {params.friends.city}, {params.friends.state}
+            {params.friends.City}, {params.friends.State}
           </Text>
         </View>
       </View>
 
       <View style={s.discriptionContainer}>
         <Text style={s.descriptionHeader}>Description</Text>
-        <Text style={s.descriptionText}>{params.friends.description}</Text>
+        <Text style={s.descriptionText}>{params.friends.Description}</Text>
       </View>
       <View style={s.secondHalf}>
         <View style={s.activities}>
           <Text style={s.actHeader}>Favorite Activities</Text>
-          {activities.map((activity) => {
+          {params.friends.Activities.map((activity) => {
             return (
               <Text key={activity} style={s.activity}>
                 {activity}
@@ -36,7 +38,12 @@ export function Profile({ friends }) {
             );
           })}
         </View>
-        <Image style={s.referenceImg} source={realImageUri} />
+        <Image
+          style={s.referenceImg}
+          source={{
+            uri: `https://inoxtkubxynhbuslvgyv.supabase.co/storage/v1/object/public/varPhoto/${params.friends.varPhoto}`,
+          }}
+        />
       </View>
     </View>
   );

@@ -2,9 +2,9 @@ import { s } from "./UserProfile.style";
 import { useState, useEffect } from "react";
 import { supabase } from "../../client";
 import { Text, Image, View, TouchableOpacity } from "react-native";
-
+import { idNum } from "../../utils/auth";
 export function UserProfile({}) {
-  const [userID, setUserID] = useState("bd0597d3-82bc-4d60-9043-8892afd74150");
+  const [userID, setUserID] = useState("");
   const [userProfile, setUserProfile] = useState("");
 
   useEffect(() => {
@@ -16,6 +16,7 @@ export function UserProfile({}) {
   }, [userID]);
 
   async function fetchUserProfile() {
+    setUserID(idNum);
     let { data: UserProfile, error } = await supabase
       .from("UserProfile")
       .select("*")
@@ -27,18 +28,19 @@ export function UserProfile({}) {
       return UserProfile;
     }
   }
-  console.log(userProfile);
 
   return (
-    <View style={s.container}>
+    <>
       {userProfile &&
         userProfile.map((profile) => {
           return (
-            <>
+            <View style={s.container} key={profile.id}>
               <View style={s.profileContainer}>
                 <Image
                   style={s.profileImg}
-                  source={require("../../assets/picard.jpg")}
+                  source={{
+                    uri: `https://inoxtkubxynhbuslvgyv.supabase.co/storage/v1/object/public/avatar/${profile.avatar}`,
+                  }}
                 />
                 <View style={s.profileInfoContainer}>
                   <Text style={s.userName}>{profile.UserName}</Text>
@@ -65,12 +67,14 @@ export function UserProfile({}) {
                 </View>
                 <Image
                   style={s.referenceImg}
-                  source={require("../../assets/PSteward.jpg")}
+                  source={{
+                    uri: `https://inoxtkubxynhbuslvgyv.supabase.co/storage/v1/object/public/varPhoto/${profile.varPhoto}`,
+                  }}
                 />
               </View>
-            </>
+            </View>
           );
         })}
-    </View>
+    </>
   );
 }

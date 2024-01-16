@@ -1,9 +1,11 @@
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import { s } from "./Search.style";
 import { useNavigation } from "@react-navigation/native";
+
 import { RecCard } from "../../components/RecCard/RecCard";
 export function Search({}) {
   const nav = useNavigation();
+
   return (
     <View style={s.container}>
       <View style={s.btnContainer}>
@@ -28,8 +30,6 @@ export function Search({}) {
       </View>
       <Text style={s.recHeader}>Recommended</Text>
       <ScrollView style={s.recContainer}>
-        <RecCard />
-        <RecCard />
         <RecCard />
       </ScrollView>
     </View>

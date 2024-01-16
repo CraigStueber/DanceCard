@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
-  container: {
+  containerCard: {
     flexDirection: "row",
     flex: 1,
     paddingHorizontal: 30,
@@ -12,20 +12,19 @@ export const s = StyleSheet.create({
     marginVertical: 5,
     backgroundColor: "#ece4d6",
   },
-  activityImage: { height: 80, width: 80, borderRadius: 20 },
-  textContainer: { paddingLeft: 20 },
-  eventTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#593a7b",
-  },
   icon: {
     height: 75,
     width: 75,
   },
+  textContainer: { paddingLeft: 20 },
   subTitleContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  eventTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#593a7b",
   },
   date: {
     paddingRight: 30,

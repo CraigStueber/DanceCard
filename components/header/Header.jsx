@@ -19,7 +19,9 @@ export function Header({}) {
       >
         <Image
           style={s.profileImg}
-          source={require("../../assets/picard.jpg")}
+          source={{
+            uri: "https://inoxtkubxynhbuslvgyv.supabase.co/storage/v1/object/public/avatar/craigAvatar.jpg",
+          }}
         />
       </TouchableOpacity>
     </View>

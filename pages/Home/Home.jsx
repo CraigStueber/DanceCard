@@ -1,10 +1,11 @@
 import { RecCard } from "../../components/RecCard/RecCard";
 import { s } from "./Home.style";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export function Home({}) {
   const nav = useNavigation();
+
   return (
     <View style={s.container}>
       <View style={s.btnContainer}>
@@ -23,8 +24,6 @@ export function Home({}) {
       </View>
       <Text style={s.recHeader}>Recommended</Text>
       <ScrollView style={s.recContainer}>
-        <RecCard />
-        <RecCard />
         <RecCard />
       </ScrollView>
     </View>

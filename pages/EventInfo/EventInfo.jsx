@@ -33,10 +33,11 @@ export function EventInfo({}) {
         <Image source={icon} style={s.iconImage} />
         <View style={s.infoView}>
           <Text style={s.title}>{params.happening.name}</Text>
+          <Text style={s.title}>Host: Craig</Text>
           <Text style={s.infoText}>Date: {params.happening.date}</Text>
           <Text style={s.infoText}>Time: {params.happening.time}</Text>
           <Text style={s.infoText}>Location: {params.happening.location}</Text>
-          <Text style={s.infoText}>Address:</Text>
+          <Text style={(s.infoText, s.labelTextInfo)}>Address:</Text>
           <Text style={s.infoText}>{params.happening.address}</Text>
           <Text style={s.infoText}>City: {params.happening.city}</Text>
         </View>

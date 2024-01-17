@@ -66,4 +66,6 @@ export const s = StyleSheet.create({
     color: "white",
   },
   attContainer: {},
+  labelTextInfo: { fontWeight: "bold" },
+  hostName: { fontWeight: "bold" },
 });

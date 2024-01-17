@@ -41,7 +41,7 @@ export function CreateHappening({}) {
       ),
     },
   ]);
-  console.log(date);
+
   const showDate = () => {
     setShowDatePicker(!showDatePicker);
   };

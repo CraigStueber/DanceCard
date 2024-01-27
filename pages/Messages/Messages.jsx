@@ -1,19 +1,12 @@
 import { s } from "./Messages.style";
-import { ScrollView } from "react-native";
-import { MessageView } from "../../components/MessageComponents/MessageView";
+import { View, Text } from "react-native";
 
 export function Messages({}) {
   return (
-    <ScrollView style={s.container}>
-      <MessageView />
-      <MessageView />
-      <MessageView />
-      <MessageView />
-      <MessageView />
-      <MessageView />
-      <MessageView />
-      <MessageView />
-      <MessageView />
-    </ScrollView>
+    <View style={s.container}>
+      <Text style={s.comingText}>FEATURE</Text>
+      <Text style={s.comingText}>COMING</Text>
+      <Text style={s.comingText}>SOON</Text>
+    </View>
   );
 }

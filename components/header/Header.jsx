@@ -11,7 +11,7 @@ export function Header({}) {
         style={s.logoContainer}
         onPress={() => nav.navigate("Home")}
       >
-        <Text style={s.nameLogo}>Dance Card</Text>
+        <Text style={s.nameLogo}>DanceCard</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={s.profileImgContainer}

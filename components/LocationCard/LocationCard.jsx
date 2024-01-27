@@ -1,15 +1,15 @@
 import { TouchableOpacity, Image, View, Text } from "react-native";
 import { s } from "./LocationCard.style";
-import OEJ from "../../assets/OEJ.png";
-import { useNavigation } from "@react-navigation/native";
 
+import { useNavigation } from "@react-navigation/native";
+import { fetchIcon } from "../../utils/iconfunction";
 export function LocationCard({ location }) {
   const nav = useNavigation();
-
+  let icon = fetchIcon(location.icon);
   const imageUri = location.image;
   return (
     <View style={s.container}>
-      <Image source={imageUri} style={s.locationLogo} />
+      <Image source={icon} style={s.locationLogo} />
       <View style={s.locationNameContainer}>
         <Text style={s.locationName}>{location.name}</Text>
         <TouchableOpacity

@@ -20,8 +20,8 @@ export function Friends({}) {
   async function fetchFriends() {
     let { data: UserProfile, error } = await supabase
       .from("UserProfile")
-      .select("*")
-      .range(0, 9);
+      .select("*");
+
     if (error) {
       console.error("Error Fetching:", error);
       return;
